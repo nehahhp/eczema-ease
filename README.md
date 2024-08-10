@@ -1,2 +1,4 @@
-# eczema-ease
-AI/ML eczema detection and education application
+#Inspiration
+Lorem Ipsum
+#Modules
+Lorem
