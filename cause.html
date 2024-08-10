@@ -1,0 +1,57 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Causes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Manage Causes</h1>
+    </header>
+    <div class="categories-container">
+        <div class="label">Categories</div>
+        <div class="core-categories">
+            <button class="category-btn" data-category="Cream">Cream</button>
+            <button class="category-btn" data-category="Soap">Soap</button>
+            <button class="category-btn" data-category="Medicine">Medicine</button>
+            <button class="category-btn" data-category="OTCShots">OTC Shots</button>
+            <button class="category-btn" data-category="ExternalFactors">External Factors</button>
+            <button class="category-btn" data-category="Homeopathy">Homeopathy</button> <!-- Added button -->
+            <button class="category-btn" data-category="DietaryChanges">Dietary Changes</button> <!-- Added button -->
+            <button class="category-btn" data-category="LifestyleChanges">Lifestyle Changes</button> <!-- Added button -->
+            <button class="category-btn" data-category="EnvironmentalFactors">Home Technology</button> <!-- Added button -->
+            <button class="category-btn" data-category="PrescriptionMedications">Prescription Medications</button> <!-- Added button -->
+            <button class="category-btn" data-category="TopicalTreatments">Topical Treatments</button> <!-- Added button -->
+        </div>
+    </div>
+
+    <div id="itemPool" class="item-area">
+        <!-- Items will be loaded here based on selection -->
+    </div>
+
+    <div id="start" class="column">
+        <h3>Start</h3>
+        <div class="items"></div>
+    </div>
+
+    <div id="stop" class="column">
+        <h3>Stop</h3>
+        <div class="items"></div>
+    </div>
+
+    <div id="continue" class="column">
+        <h3>Continue</h3>
+        <div class="items"></div>
+    </div>
+
+    <div id="externalFactors" class="column">
+        <h3>External Factors</h3>
+        <div class="items"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

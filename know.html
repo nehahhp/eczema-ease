@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eczema Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Eczema Detection</h1>
+    </header>
+    <div class="container">
+        <h2>Upload a Photo for Detection</h2>
+        <div class="photo-detection">
+            <div class="photo-upload">
+                <label for="photoInput" class="custom-file-input">Upload</label>
+                <input type="file" id="photoInput" name="photoInput" accept="image/*" required>
+                <button type="button" id="processButton">Process</button>
+            </div>
+            <div class="detection-result">
+                <h3>Detection Result</h3>
+                <div id="display-photo">
+                    <img id="uploadedPhoto" src="#" alt="Uploaded Photo" style="display: none;">
+                    <div id="result">
+                        <p id="resultText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

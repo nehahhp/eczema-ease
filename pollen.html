@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollen Data</title>
+    <style>
+        body {
+            font-family: 'League Spartan', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #pollen-data {
+            padding: 20px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        async function fetchPollenData(lat, lng) {
+            const apiKey = 'AIzaSyB6vKDjtwvhLMmipr4eE3jtHCsQsBKkBcQ';
+            const url = `https://pollen.googleapis.com/v1/forecast:lookup?lat=${lat}&lng=${lng}&key=${apiKey}`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching pollen data:', error);
+                return null;
+            }
+        }
+
+        async function displayPollenData() {
+            const lat = 29.4241;  // Latitude for San Antonio, TX
+            const lng = -98.4936; // Longitude for San Antonio, TX
+            const pollenData = await fetchPollenData(lat, lng);
+
+            if (pollenData) {
+                const pollenContainer = document.getElementById('pollen-data');
+                pollenContainer.innerHTML = `
+                    <h2>Pollen Data</h2>
+                    <p>Tree Pollen: ${pollenData.tree_pollen_count}</p>
+                    <p>Grass Pollen: ${pollenData.grass_pollen_count}</p>
+                    <p>Weed Pollen: ${pollenData.weed_pollen_count}</p>
+                `;
+            } else {
+                const pollenContainer = document.getElementById('pollen-data');
+                pollenContainer.innerHTML = `
+                    <h2>Pollen Data</h2>
+                    <p>Unable to fetch pollen data at this time.</p>
+                `;
+            }
+        }
+
+        window.onload = displayPollenData;
+    </script>
+</head>
+<body>
+    <div id="pollen-data">
+        <h2>Loading Pollen Data...</h2>
+    </div>
+</body>
+</html>

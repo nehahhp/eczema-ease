@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Care</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Manage Care</h1>
+    </header>
+    <div class="container">
+        <h2>Track Your Care</h2>
+        <form id="careForm" class="form-inline">
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="skincare">Skincare</label>
+                <input type="text" id="skincare" name="skincare" required>
+            </div>
+            <div class="form-group">
+                <label for="medicine">Medicine</label>
+                <input type="text" id="medicine" name="medicine" required>
+            </div>
+            <div class="form-group">
+                <label for="lifestyle">Lifestyle</label>
+                <input type="text" id="lifestyle" name="lifestyle" required>
+            </div>
+            <div class="form-group">
+                <label for="externalFactors">External Factors</label>
+                <input type="text" id="externalFactors" name="externalFactors" required>
+            </div>
+            <div class="form-group">
+                <label for="diet">Diet</label>
+                <input type="text" id="diet" name="diet" required>
+            </div>
+            <div class="form-group">
+                <label for="homeTech">Home Tech</label>
+                <input type="text" id="homeTech" name="homeTech" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <!-- Examples Section -->
+        <h3>Examples</h3>
+        <div class="examples-section">
+            <div class="example">
+                <p><strong>Skincare:</strong> CeraVe, Eucerin, Aveeno</p>
+            </div>
+            <div class="example">
+                <p><strong>Medicine:</strong> Antihistamines, Steroids</p>
+            </div>
+            <div class="example">
+                <p><strong>Lifestyle:</strong> Exercise, Sleep</p>
+            </div>
+            <div class="example">
+                <p><strong>External Factors:</strong> Pollens, Dust Mites, Pet Dander</p>
+            </div>
+            <div class="example">
+                <p><strong>Diet:</strong> Nut-free, Dairy-free, Omega-3 Rich Foods</p>
+            </div>
+            <div class="example">
+                <p><strong>Home Tech:</strong> Humidifier, Hypoallergenic Bedding</p>
+            </div>
+        </div>
+
+        <h3>Care History</h3>
+        <table id="careTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Skincare</th>
+                    <th>Medicine</th>
+                    <th>Lifestyle</th>
+                    <th>External Factors</th>
+                    <th>Diet</th>
+                    <th>Home Tech</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Submitted data will appear here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="manage.js"></script>
+</body>
+</html>
